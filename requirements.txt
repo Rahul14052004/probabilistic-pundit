@@ -1,0 +1,32 @@
+# Web / API
+fastapi
+uvicorn[standard]
+pydantic
+
+# HTTP / async LLM calls
+httpx
+requests
+tenacity
+
+# Frontend UI
+streamlit
+
+# Data & utilities
+pandas
+numpy
+python-dotenv
+loguru
+
+# Monitoring
+prometheus-client
+
+# Testing
+pytest
+httpx[http2]
+
+# Optional / API SDKs (you may remove if not using them)
+openai
+groq
+huggingface-hub
+transformers
+accelerate
