@@ -66,36 +66,35 @@ async def _http_post(payload: Dict[str, Any], model: str) -> Dict[str, Any]:
 
     is_groq = model in KNOWN_GROQ_MODELS or model.startswith("groq/")
 
-    if is_groq:
-        if not GROQ_API_KEY:
-            raise RuntimeError("GROQ_API_KEY not set in .env")
+    if not is_groq:
+        # You only want to use Groq-hosted models
+        raise RuntimeError(
+            f"Model '{model}' is not recognized as a Groq model. "
+            f"Use one of: {', '.join(KNOWN_GROQ_MODELS)}"
+        )
 
-        # Normalize model name
-        groq_model = model.split("/", 1)[-1] if "/" in model else model
+    if not GROQ_API_KEY:
+        raise RuntimeError("GROQ_API_KEY not set in .env")
 
-        url = "https://api.groq.com/openai/v1/chat/completions"
-        headers = {
-            "Authorization": f"Bearer {GROQ_API_KEY}",
-            "Content-Type": "application/json"
-        }
+    # Normalize model name (if you ever use 'groq/llama-3.1-8b-instant' style)
+    groq_model = model.split("/", 1)[-1] if "/" in model else model
 
-        async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
-            r = await client.post(url, json=payload, headers=headers)
-            r.raise_for_status()
-            return r.json()
+    url = "https://api.groq.com/openai/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {GROQ_API_KEY}",
+        "Content-Type": "application/json",
+    }
 
-    # Fallback generic provider
-    if not LLM_ENDPOINT:
-        raise RuntimeError("No LLM_ENDPOINT configured for non-Groq models. Set LLM_ENDPOINT in .env")
-
-    headers = {"Content-Type": "application/json"}
-    if LLM_API_KEY:
-        headers["Authorization"] = f"Bearer {LLM_API_KEY}"
+    # payload already has model + messages etc from call_llm
+    # ensure it uses the normalized groq_model
+    payload = dict(payload)
+    payload["model"] = groq_model
 
     async with httpx.AsyncClient(timeout=HTTP_TIMEOUT) as client:
-        r = await client.post(LLM_ENDPOINT, json=payload, headers=headers)
+        r = await client.post(url, json=payload, headers=headers)
         r.raise_for_status()
         return r.json()
+
 
 # --- Public LLM call ---
 async def call_llm(
