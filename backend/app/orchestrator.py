@@ -8,6 +8,9 @@ from .agents.meta_agent import MetaAgent
 from .data_loader import load_aggregated_players_for_season_gw
 from .topsis_filter import select_top_players_with_topsis
 from typing import Dict, Any, List
+from .utils.logger_utils import save_json_log
+import pandas as pd
+
 
 class Orchestrator:
     def __init__(self):
@@ -48,6 +51,9 @@ class Orchestrator:
         expert_tasks = [e.analyze(candidates, request) for e in self.experts]
         expert_outputs = await asyncio.gather(*expert_tasks)
 
+        for eo in expert_outputs:
+                save_json_log(season, gameweek, f"expert_{eo['agent']}", eo)
+
         # 3. meta-synthesis
         #    Important: pass candidates into the request so MetaAgent can fill name/position/club/price
         meta_request = dict(request or {})
@@ -59,6 +65,7 @@ class Orchestrator:
             "expert_outputs": expert_outputs,
             "meta_decision": "synthesized",
         }
+        save_json_log(season, gameweek, "meta_output", team)
         return team, explanation
 
     
@@ -105,6 +112,8 @@ class Orchestrator:
             print(c)
         print("**************************************************")
 
+        save_json_log(season, gameweek, "candidates", candidates)
+        save_json_log(season, gameweek, "topsis", df_cand.to_dict(orient="records"))
         return candidates
 
 

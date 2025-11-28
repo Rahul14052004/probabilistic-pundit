@@ -6,7 +6,7 @@ import os
 from loguru import logger
 from ..llm_client import call_llm
 
-CHUNK_SIZE = int(os.getenv("EXPERT_CHUNK_SIZE", "25"))
+CHUNK_SIZE = int(os.getenv("EXPERT_CHUNK_SIZE", "30"))
 EXPERT_DEFAULT_MODEL = os.getenv("EXPERT_DEFAULT_MODEL", "llama-3.1-8b-instant")
 MAX_TOKENS_PER_PLAYER = 70
 
