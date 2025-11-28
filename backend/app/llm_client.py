@@ -16,6 +16,7 @@ from tenacity import (
 
 from dotenv import load_dotenv
 load_dotenv()
+import copy
 
 # ======================================================================
 # LOGGER
@@ -176,7 +177,7 @@ async def call_llm(
             try:
                 logger.warning(f"[LLM] FALLBACK MODEL → {fb_model}")
 
-                fb_payload = payload.copy()
+                fb_payload = copy.deepcopy(payload)
                 fb_payload["model"] = fb_model
 
                 resp_json = await _http_post(fb_payload, fb_model, key)
