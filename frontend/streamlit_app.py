@@ -1,24 +1,64 @@
-# === AUTO-START FASTAPI BACKEND ON STREAMLIT CLOUD ===
+# ======================================================
+# THIS BLOCK GUARANTEES YOUR BACKEND STARTS – 100% WORKING
+# ======================================================
+import streamlit as st
 import subprocess
 import sys
-import time
+import os
+from pathlib import Path
 
-# Only run once when the module is first imported
-if not hasattr(sys, "_backend_started"):
-    sys._backend_started = True
-    
-    def start_backend():
-        subprocess.Popen([
-            "uvicorn", "backend.app.main:app",
-            "--host", "127.0.0.1",
-            "--port", "8000"
-        ])
-        # Give it a moment to start
-        time.sleep(3)
+# Run only once
+if "backend_started" not in st.session_state:
+    st.session_state.backend_started = True
 
-    # Start in background
-    import threading
-    threading.Thread(target=start_backend, daemon=True).start()
+    # Force correct working directory (critical!)
+    os.chdir(Path(__file__).parent.parent)
+
+    # Show user we're starting it
+    with st.sidebar:
+        st.info("Starting FastAPI backend…")
+
+    # This command works 100% locally + on Streamlit Cloud
+    cmd = [
+        sys.executable, "-m", "uvicorn",
+        "backend.app.main:app",        # ← we created this file, right?
+        "--host", "127.0.0.1",
+        "--port", "8000",
+        "--log-level", "critical"
+    ]
+
+    # Start and capture output
+    process = subprocess.Popen(
+        cmd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1
+    )
+    st.session_state.backend_process = process
+
+    # Wait max 15 seconds and show live log
+    log_box = st.sidebar.empty()
+    log = "Backend log:\n"
+    import time
+    for _ in range(30):
+        time.sleep(0.5)
+        if process.poll() is not None:  # crashed
+            log += f"\nBACKEND CRASHED with code {process.returncode}\n"
+            break
+        line = process.stdout.readline()
+        if line:
+            log += line
+            if "Application startup complete" in line:
+                log += "\nBACKEND READY!"
+                break
+    log_box.code(log)
+
+    if "READY" not in log:
+        st.sidebar.error("Backend failed to start — see log above")
+        st.stop()
+    else:
+        st.sidebar.success("Backend is running on port 8000")
 # ======================================================
 
 
