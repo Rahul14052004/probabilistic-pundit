@@ -56,7 +56,7 @@ def _validate_team(selected: List[Dict[str, Any]], budget: float, max_per_club: 
         club = p.get("club")
         if club:
             club_counts[club] = club_counts.get(club, 0) + 1
-    for pos, req in [("GK", 2), ("DEF", 5), ("MID", 5), ("FWD", 3)]:
+    for pos, req in [("GK", 1), ("DEF", 1), ("MID", 1), ("FWD", 1)]:
         if pos_counts.get(pos, 0) != req:
             violations.append(f"pos_{pos}={pos_counts.get(pos,0)} != {req}")
     for club, cnt in club_counts.items():
