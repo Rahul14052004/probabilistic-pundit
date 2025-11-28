@@ -193,7 +193,7 @@ class MetaAgent:
         compact = []
         for key, entry in agg.items():
             meta = meta_map[key]
-
+            print(meta)
             name = entry["name"]
             team = entry["team"]
             position = meta["position"]

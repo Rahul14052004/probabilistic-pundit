@@ -61,38 +61,52 @@ class Orchestrator:
         }
         return team, explanation
 
+    
     def _filter_candidates(self, season: str, gameweek: int, n_candidates: int = 30) -> List[Dict[str, Any]]:
         """
-        Use Vaastav GW data for the given season up to (but not including) 'gameweek',
-        aggregate stats per player, then run TOPSIS to select the top
-        n_candidates players as the candidate pool for the agents.
+        Use season + gameweek GW data to:
+
+        1) Aggregate per-player stats up to (but not including) the target GW
+        2) Run TOPSIS to pick the top n_candidates
+        3) Return a clean list of player dicts using the new schema:
+
+            name, position, team, price, xP, xGI, minutes,
+            fixture, selected_by, threat, ict, topsis_score
         """
+        # 1) aggregate
         df_agg = load_aggregated_players_for_season_gw(season, gameweek)
+
+        # 2) topsis selection
         df_cand = select_top_players_with_topsis(df_agg, n_candidates=n_candidates)
 
         candidates: List[Dict[str, Any]] = []
         for _, row in df_cand.iterrows():
             candidates.append(
                 {
-                    "name": str(row["name"]),
-                    "position": str(row["position"]),
-                    "club": str(row["club"]),
-                    "price": float(row["price"]),
-                    "ev": float(row.get("expected_points", 0.0) or 0.0),
-                    "std": None,
-                    "topsis_score": float(row.get("topsis_score", 0.0)),
-                    "total_points": float(row.get("total_points", 0.0)),
-                    "minutes": float(row.get("minutes", 0.0)),
-                    "goals_scored": float(row.get("goals_scored", 0.0)),
-                    "assists": float(row.get("assists", 0.0)),
+                    "name": str(row.get("name", "")),
+                    "position": str(row.get("position", "")),
+                    "team": str(row.get("team", "")),
+                    "value": float(row.get("value", 0.0) or 0.0),
+
+                    "xP": float(row.get("xP", 0.0) or 0.0),
+                    "xGI": float(row.get("xGI", 0.0) or 0.0),
+                    "minutes": float(row.get("minutes", 0.0) or 0.0),
+                    "fixture": str(row.get("fixture", "")),
+                    "selected_by": float(row.get("selected_by", 0.0) or 0.0),
+                    "threat": float(row.get("threat", 0.0) or 0.0),
+                    "ict": float(row.get("ict", 0.0) or 0.0),
+
+                    "topsis_score": float(row.get("topsis_score", 0.0) or 0.0),
                 }
             )
-        
-        print("*******************")
-        print(candidates)
-        print("*******************")
+
+        print("******************* CANDIDATES *******************")
+        for c in candidates:
+            print(c)
+        print("**************************************************")
 
         return candidates
+
 
     def compare_players(self, payload: Dict[str, Any]):
         return {"comparison": "not implemented"}
