@@ -8,9 +8,9 @@ from ..llm_client import call_llm
 
 CHUNK_SIZE = int(os.getenv("EXPERT_CHUNK_SIZE", "25"))
 EXPERT_DEFAULT_MODEL = os.getenv("EXPERT_DEFAULT_MODEL", "llama-3.1-8b-instant")
-MAX_TOKENS_PER_PLAYER = 70  
+MAX_TOKENS_PER_PLAYER = 70
 
-# Persona prompts (justification added for Safe Bet + Differentials)
+# Persona prompts 
 PERSONA_PROMPTS = {
     "value_hunter": """You are the 'Value Hunter,' an FPL analyst specializing in underpriced high-PPM players.
 
@@ -25,9 +25,9 @@ For EACH player, include a SHORT justification (max 15–20 words).
 Return ONLY:
 [
   {
-    "player_id": 123,
+    "name": "<player name>",
     "probs": {"Zeros":0.2,"Blanks":0.3,"Tickers":0.3,"Haulers":0.2},
-    "justification": "high xGI + great fixture + underpriced"
+    "justification": "short reason"
   }
 ]
 """,
@@ -42,9 +42,9 @@ Include a short justification for each player.
 Return ONLY:
 [
   {
-    "player_id": 123,
+    "name": "<player name>",
     "probs": {"Zeros":0.25,"Blanks":0.25,"Tickers":0.25,"Haulers":0.25},
-    "justification": "nailed starter, high influence, safe floor"
+    "justification": "short reason"
   }
 ]
 """,
@@ -59,9 +59,9 @@ Include a short justification for each player.
 Return ONLY:
 [
   {
-    "player_id": 123,
+    "name": "<player name>",
     "probs": {"Zeros":0.1,"Blanks":0.2,"Tickers":0.4,"Haulers":0.3},
-    "justification": "low ownership, rising form, strong xGI"
+    "justification": "short reason"
   }
 ]
 """,
@@ -69,9 +69,11 @@ Return ONLY:
 
 NEUTRAL_PROBS = {"Zeros": 0.25, "Blanks": 0.25, "Tickers": 0.25, "Haulers": 0.25}
 
+
 class ExpertAgent:
     def __init__(self, name: str, persona: str = "value_hunter", model: str | None = None):
         self.name = name
+
         if persona not in PERSONA_PROMPTS:
             logger.warning(f"Unknown persona '{persona}', defaulting to value_hunter")
             persona = "value_hunter"
@@ -81,15 +83,14 @@ class ExpertAgent:
         self.model = model or EXPERT_DEFAULT_MODEL
 
     async def analyze(self, candidates: List[Dict[str, Any]], metadata: Dict[str, Any]) -> Dict[str, Any]:
-
         results: List[Dict[str, Any]] = []
 
         for i in range(0, len(candidates), CHUNK_SIZE):
             chunk = candidates[i:i + CHUNK_SIZE]
 
+            # Compact structure 
             compact = [
                 {
-                    "player_id": int(c.get("player_id") or c.get("id")),
                     "name": c.get("name"),
                     "position": c.get("position"),
                     "team": c.get("team"),
@@ -107,6 +108,7 @@ class ExpertAgent:
 
             user_prompt = "Candidates:\n" + json.dumps(compact, ensure_ascii=False)
             max_tokens = int(len(chunk) * MAX_TOKENS_PER_PLAYER * 1.1)
+
             try:
                 resp = await call_llm(
                     self.system_prompt,
@@ -123,11 +125,11 @@ class ExpertAgent:
                     raise ValueError("LLM must return a list")
 
                 for entry in parsed:
-                    pid = int(entry.get("player_id", -1))
+                    name = entry.get("name", "").strip()
                     raw_probs = entry.get("probs", {})
                     justification = entry.get("justification", "").strip()
 
-                    # Validate & normalize probs
+                    # Validate + normalize probabilities
                     if not isinstance(raw_probs, dict):
                         probs = NEUTRAL_PROBS.copy()
                     else:
@@ -141,17 +143,17 @@ class ExpertAgent:
                         justification = "No justification provided."
 
                     results.append({
-                        "player_id": pid,
+                        "name": name,
                         "probs": probs,
                         "justification": justification,
                     })
 
             except Exception as e:
                 logger.exception(f"ExpertAgent {self.name} failed for chunk: {e}")
+
                 for c in chunk:
-                    pid = int(c.get("player_id") or c.get("id"))
                     results.append({
-                        "player_id": pid,
+                        "name": c.get("name"),
                         "probs": NEUTRAL_PROBS.copy(),
                         "justification": "Fallback due to error."
                     })
