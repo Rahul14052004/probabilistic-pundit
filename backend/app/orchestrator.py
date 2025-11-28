@@ -5,7 +5,9 @@ from loguru import logger
 
 from .agents.expert_agent import ExpertAgent
 from .agents.meta_agent import MetaAgent
-
+from .data_loader import load_aggregated_players_for_season_gw
+from .topsis_filter import select_top_players_with_topsis
+from typing import Dict, Any, List
 
 class Orchestrator:
     def __init__(self):
@@ -33,7 +35,13 @@ class Orchestrator:
         4. Return (team, explanation) pair
         """
         # 1. deterministic candidate filter (later: TOPSIS / DB / Neon)
-        candidates = self._filter_candidates()
+        season = request.get("season")
+        gameweek = request.get("gameweek")
+
+        if not season or not gameweek:
+            raise ValueError("season and gameweek are required in request payload")
+
+        candidates = self._filter_candidates(season, gameweek)
         logger.info(f"Orchestrator: using {len(candidates)} candidates")
 
         # 2. call experts in parallel
@@ -53,29 +61,38 @@ class Orchestrator:
         }
         return team, explanation
 
-    def _filter_candidates(self):
+    def _filter_candidates(self, season: str, gameweek: int, n_candidates: int = 30) -> List[Dict[str, Any]]:
         """
-        Placeholder deterministic candidate filter returning correctly shaped dicts.
-        Replace or extend this to query your DB / feature store later.
+        Use Vaastav GW data for the given season up to (but not including) 'gameweek',
+        aggregate stats per player, then run TOPSIS to select the top
+        n_candidates players as the candidate pool for the agents.
+        """
+        df_agg = load_aggregated_players_for_season_gw(season, gameweek)
+        df_cand = select_top_players_with_topsis(df_agg, n_candidates=n_candidates)
 
-        Minimal fields used downstream:
-        - player_id (int)
-        - name (str)
-        - position (str)   e.g. 'GK', 'DEF', 'MID', 'FWD'
-        - club (str)
-        - price (float)    FPL price in millions
-        """
-        return [
-            {"player_id": 1, "name": "Player 1", "position": "MID", "club": "ClubA", "price": 5.0},
-            {"player_id": 2, "name": "Player 2", "position": "FWD", "club": "ClubB", "price": 7.5},
-            {"player_id": 3, "name": "Player 3", "position": "DEF", "club": "ClubC", "price": 4.5},
-            {"player_id": 4, "name": "Player 4", "position": "GK",  "club": "ClubD", "price": 5.5},
-            {"player_id": 5, "name": "Player 5", "position": "MID", "club": "ClubE", "price": 6.0},
-            # Add more demo entries or replace with real data later
-        ]
+        candidates: List[Dict[str, Any]] = []
+        for _, row in df_cand.iterrows():
+            candidates.append(
+                {
+                    "name": str(row["name"]),
+                    "position": str(row["position"]),
+                    "club": str(row["club"]),
+                    "price": float(row["price"]),
+                    "ev": float(row.get("expected_points", 0.0) or 0.0),
+                    "std": None,
+                    "topsis_score": float(row.get("topsis_score", 0.0)),
+                    "total_points": float(row.get("total_points", 0.0)),
+                    "minutes": float(row.get("minutes", 0.0)),
+                    "goals_scored": float(row.get("goals_scored", 0.0)),
+                    "assists": float(row.get("assists", 0.0)),
+                }
+            )
+        
+        print("*******************")
+        print(candidates)
+        print("*******************")
 
-    def compare_players(self, payload: dict):
-        """
-        Placeholder for a future endpoint that compares two or more players.
-        """
+        return candidates
+
+    def compare_players(self, payload: Dict[str, Any]):
         return {"comparison": "not implemented"}

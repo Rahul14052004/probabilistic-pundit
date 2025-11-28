@@ -1,13 +1,16 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from .orchestrator import Orchestrator
+from typing import Optional
 
 router = APIRouter()
 
 class TeamRequest(BaseModel):
     budget: float = 100.0
-    chips: list[str] | None = None
-    constraints: dict | None = None
+    season: Optional[str] = None        # 🔹 NEW
+    gameweek: Optional[int] = None      # was only on frontend before, now explicit
+    chips: Optional[list[str]] = None
+    constraints: Optional[dict] = None
 
 orchestrator = Orchestrator()
 

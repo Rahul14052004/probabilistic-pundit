@@ -281,6 +281,25 @@ with col_sidebar:
     st.markdown("### ⚙️ Team Configuration")
     
     with st.container():
+        # Season selection
+        season = st.selectbox(
+            "Season",
+            options=["2025-26","2024-25", "2023-24", "2022-23", "2021-22"],
+            index=0,
+            help="Select the FPL season"
+        )
+        
+        # Gameweek selection
+        gameweek = st.number_input(
+            "Gameweek",
+            min_value=1,
+            max_value=38,
+            value=1,
+            step=1,
+            help="Select the gameweek for predictions"
+        )
+        
+        # Budget input
         budget = st.number_input(
             "Budget (£M)",
             min_value=50.0,
@@ -295,9 +314,14 @@ with col_sidebar:
         if generate_btn:
             with st.spinner("🤖 AI is analyzing players..."):
                 try:
+                    payload = {
+                        "budget": budget,
+                        "season": season,
+                        "gameweek": gameweek
+                    }
                     r = requests.post(
                         f"{API_URL}/generate_team",
-                        json={"budget": budget},
+                        json=payload,
                         timeout=60
                     )
                     if r.ok:
@@ -306,7 +330,7 @@ with col_sidebar:
                         st.session_state.explanation = payload.get("explanation")
                         st.session_state.chat_history = [{
                             "role": "assistant",
-                            "text": "✅ Team generated successfully! Ask me why I picked any player or for tactical advice."
+                            "text": f"✅ Team generated successfully for {season} GW{gameweek}! Ask me why I picked any player or for tactical advice."
                         }]
                         st.success("✅ Team ready!")
                         st.rerun()
