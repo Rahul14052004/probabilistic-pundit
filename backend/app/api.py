@@ -6,7 +6,7 @@ from typing import Optional
 router = APIRouter()
 
 class TeamRequest(BaseModel):
-    budget: float = 100.0
+    budget: float = 1000.0
     season: Optional[str] = None        # 🔹 NEW
     gameweek: Optional[int] = None      # was only on frontend before, now explicit
     chips: Optional[list[str]] = None

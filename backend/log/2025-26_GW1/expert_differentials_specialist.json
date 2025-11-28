@@ -1,0 +1,186 @@
+{
+  "agent": "differentials_specialist",
+  "persona": "differentials_specialist",
+  "recommendations": [
+    {
+      "name": "Richarlison de Andrade",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Mohamed Salah",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Bryan Mbeumo",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Matheus Santos Carneiro da Cunha",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Anthony Gordon",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Anthony Elanga",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Mohammed Kudus",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Virgil van Dijk",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Rico Lewis",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Micky van de Ven",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Matthijs de Ligt",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Marc Cucurella Saseta",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Sepp van den Berg",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Djed Spence",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Alisson Becker",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "David Raya Mart\u00edn",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Jordan Pickford",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    },
+    {
+      "name": "Ederson Santana de Moraes",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and selected by percentage, but fixture is relatively easy"
+    }
+  ]
+}

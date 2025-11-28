@@ -1,0 +1,136 @@
+{
+  "agent": "differentials_specialist",
+  "persona": "differentials_specialist",
+  "recommendations": [
+    {
+      "name": "Dango Ouattara",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Richarlison de Andrade",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Cody Gakpo",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Jo\u00e3o Pedro Junqueira de Jesus",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Brennan Johnson",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Enzo Fern\u00e1ndez",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Mohamed Salah",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High threat and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "David Raya Mart\u00edn",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Jordan Pickford",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "William Saliba",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Virgil van Dijk",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Guglielmo Vicario",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and minutes played, but low selected by percentage"
+    },
+    {
+      "name": "Robert Lynch S\u00e1nchez",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.2,
+        "Tickers": 0.4,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and minutes played, but low selected by percentage"
+    }
+  ]
+}

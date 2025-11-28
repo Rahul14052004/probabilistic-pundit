@@ -239,13 +239,13 @@ def render_pitch_view(team_data):
                            player.get("player_name") or "Unknown")
                     club = (player.get("club") or player.get("team") or 
                            player.get("team_name") or "")
-                    price = (player.get("price") or player.get("now_cost") or 
+                    price = (player.get("value") or player.get("now_cost") or 
                             player.get("cost") or 0)
                     
                     # Handle price formatting
                     try:
                         price_float = float(price)
-                        if price_float > 100:
+                        if price_float > 1000:
                             price_float = price_float / 10
                     except:
                         price_float = 0
@@ -302,9 +302,9 @@ with col_sidebar:
         # Budget input
         budget = st.number_input(
             "Budget (£M)",
-            min_value=50.0,
-            max_value=200.0,
-            value=100.0,
+            min_value=950.0,
+            max_value=1050.0,
+            value=1000.0,
             step=0.5,
             help="Set your fantasy team budget"
         )
@@ -359,10 +359,10 @@ with col_sidebar:
             
             for p in players_list:
                 if isinstance(p, dict):
-                    price = p.get("price") or p.get("now_cost") or p.get("cost") or 0
+                    price = p.get("value") or p.get("now_cost") or p.get("cost") or 0
                     try:
                         price_float = float(price)
-                        if price_float > 100:
+                        if price_float > 1000:
                             price_float = price_float / 10
                         total_cost += price_float
                     except:

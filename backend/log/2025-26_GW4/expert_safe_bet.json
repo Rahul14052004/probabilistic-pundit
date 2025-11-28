@@ -1,0 +1,96 @@
+{
+  "agent": "safe_bet",
+  "persona": "safe_bet",
+  "recommendations": [
+    {
+      "name": "Riccardo Calafiori",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (8.87), consistent minutes (224), and threat (22.67)"
+    },
+    {
+      "name": "Hugo Ekitik\u00e9",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (7.33), consistent minutes (228), and threat (20.67)"
+    },
+    {
+      "name": "Viktor Gy\u00f6keres",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (5), consistent minutes (239), and threat (18)"
+    },
+    {
+      "name": "Trevoh Chalobah",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (6.7), consistent minutes (248), and threat (18)"
+    },
+    {
+      "name": "Marc Cucurella Saseta",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (6.1), consistent minutes (248), and threat (5.67)"
+    },
+    {
+      "name": "Guglielmo Vicario",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (6.37), consistent minutes (270), and threat (0)"
+    },
+    {
+      "name": "David Raya Mart\u00edn",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (6.33), consistent minutes (270), and threat (0)"
+    },
+    {
+      "name": "Jordan Pickford",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (6.33), consistent minutes (270), and threat (0)"
+    },
+    {
+      "name": "Nick Pope",
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "justification": "High xP (5.53), consistent minutes (270), and threat (0)"
+    }
+  ]
+}
