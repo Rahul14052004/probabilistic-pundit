@@ -10,7 +10,7 @@ META_DEFAULT_MODEL = os.getenv("META_DEFAULT_MODEL", "llama-3.1-70b-versatile")
 META_MAX_TOKENS = int(os.getenv("META_MAX_TOKENS", "3500"))
 
 # ------------------------------------------------------------------------------------
-# DETERMINISTIC FALLBACK (corrected)
+# DETERMINISTIC FALLBACK (corrected, no player_id)
 # ------------------------------------------------------------------------------------
 
 def deterministic_fallback(candidates: List[Dict[str, Any]], budget: float):
@@ -60,17 +60,16 @@ def deterministic_fallback(candidates: List[Dict[str, Any]], budget: float):
 
 
 # ------------------------------------------------------------------------------------
-# CONSENSUS REMOVAL
+# CONSENSUS REMOVAL (no player_id)
 # ------------------------------------------------------------------------------------
 
 def consensus_remover(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    bad_flags = []
+    bad = []
     for c in candidates:
         p = c["probs"]
         if p["Tickers"] <= 0.10 and p["Haulers"] <= 0.05:
-            bad_flags.append(c)
+            bad.append(c)
 
-    # Count per position
     count = {"GK": 0, "DEF": 0, "MID": 0, "FWD": 0}
     for c in candidates:
         count[c["position"]] += 1
@@ -79,7 +78,7 @@ def consensus_remover(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     keep = []
     for c in candidates:
-        if c not in bad_flags:
+        if c not in bad:
             keep.append(c)
             continue
 
@@ -93,42 +92,40 @@ def consensus_remover(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 
 # ------------------------------------------------------------------------------------
-# CONSENSUS PICKERS (corrected for "2+ experts" rule)
+# CONSENSUS PICKERS (no player_id)
 # ------------------------------------------------------------------------------------
 
-def consensus_pickers(candidates: List[Dict[str, Any]], prob_lists_map: Dict[int, List[Dict[str, float]]], budget: float):
+def consensus_pickers(candidates: List[Dict[str, Any]], per_expert_probs: Dict[str, List[Dict[str, float]]], budget: float):
     required = {"GK": 2, "DEF": 5, "MID": 5, "FWD": 3}
     picked = []
-    filtered = []
     remaining_budget = budget
+    filtered = []
 
     for c in candidates:
-        pid = c["player_id"]
-        per_expert_probs = prob_lists_map.get(pid, [])
+        name = c["name"]
+        probs_by_expert = per_expert_probs.get(name, [])
 
-        # count experts who believe tickers/haulers >= 0.7
         high_votes = 0
-        for p in per_expert_probs:
+        for p in probs_by_expert:
             if p.get("Tickers", 0) >= 0.70 or p.get("Haulers", 0) >= 0.70:
                 high_votes += 1
 
-        if high_votes >= 2:  # actual intended rule
+        if high_votes >= 2:
             picked.append(c)
             remaining_budget -= float(c["price"])
             required[c["position"]] -= 1
         else:
             filtered.append(c)
 
-    # safety: prevent negatives
-    for k in required:
-        if required[k] < 0:
-            required[k] = 0
+    for pos in required:
+        if required[pos] < 0:
+            required[pos] = 0
 
     return picked, filtered, remaining_budget, required
 
 
 # ------------------------------------------------------------------------------------
-# TEAM VALIDATION (corrected formation)
+# TEAM VALIDATION (unchanged except no player_id)
 # ------------------------------------------------------------------------------------
 
 def _validate_team(selected: List[Dict[str, Any]], budget: float, max_per_club: int = 3):
@@ -162,7 +159,7 @@ def _validate_team(selected: List[Dict[str, Any]], budget: float, max_per_club: 
 
 
 # ------------------------------------------------------------------------------------
-# META AGENT
+# META AGENT (NO PLAYER_ID VERSION)
 # ------------------------------------------------------------------------------------
 
 class MetaAgent:
@@ -176,37 +173,38 @@ class MetaAgent:
         max_per_club = int(request.get("max_per_club", 3))
 
         # -------------------------------------------------------------
-        # 1. Aggregate expert outputs
+        # 1. Aggregate expert outputs by NAME ONLY
         # -------------------------------------------------------------
-
-        agg = {}
+        agg = {}  # key: player name
         for out in expert_outputs:
             agent_name = out["agent"]
             for r in out["recommendations"]:
-                pid = r["player_id"]
-                if pid not in agg:
-                    agg[pid] = {"probs_list": [], "justifications": []}
+                name = r["name"]  # <<—— NOTE: expert_agent must return name now
 
-                agg[pid]["probs_list"].append(r["probs"])
+                if name not in agg:
+                    agg[name] = {"probs_list": [], "justifications": []}
+
+                agg[name]["probs_list"].append(r["probs"])
                 if "justification" in r:
-                    agg[pid]["justifications"].append(f"{agent_name}: {r['justification']}")
+                    agg[name]["justifications"].append(f"{agent_name}: {r['justification']}")
 
-        details = {c["player_id"]: c for c in request["candidates"]}
+        # map metadata
+        meta_map = {c["name"]: c for c in request["candidates"]}
 
+        # compute final candidate representations
         compact = []
-        for pid, entry in agg.items():
-            meta = details[pid]
+        for name, entry in agg.items():
+            meta = meta_map[name]
+
             avg = {}
             keys = ["Zeros", "Blanks", "Tickers", "Haulers"]
             for k in keys:
                 avg[k] = sum(p[k] for p in entry["probs_list"]) / len(entry["probs_list"])
-
             total = sum(avg.values()) or 1.0
             avg = {k: v / total for k, v in avg.items()}
 
             compact.append({
-                "player_id": pid,
-                "name": meta["name"],
+                "name": name,
                 "position": meta["position"],
                 "club": meta["club"],
                 "price": meta["price"],
@@ -216,36 +214,37 @@ class MetaAgent:
                 "expert_justifications": entry["justifications"],
             })
 
-        # ------------------------------------------------------------------
+        # -------------------------------------------------------------
         # 2. CONSENSUS REMOVAL
-        # ------------------------------------------------------------------
+        # -------------------------------------------------------------
         filtered = consensus_remover(compact)
 
-        # ------------------------------------------------------------------
-        # 3. CONSENSUS PICKERS — using per-expert probability lists
-        # ------------------------------------------------------------------
-        prob_map = {pid: agg[pid]["probs_list"] for pid in agg}
-        picked, remaining, remaining_budget, required = consensus_pickers(filtered, prob_map, budget)
+        # -------------------------------------------------------------
+        # 3. CONSENSUS PICKERS
+        # -------------------------------------------------------------
+        per_expert_probs = {name: agg[name]["probs_list"] for name in agg}
+        picked, remaining_candidates, remaining_budget, required = consensus_pickers(
+            filtered, per_expert_probs, budget
+        )
 
-        # remove picked IDs from remaining
-        remaining = [c for c in remaining if c["player_id"] not in {p["player_id"] for p in picked}]
+        picked_names = {p["name"] for p in picked}
+        remaining_candidates = [c for c in remaining_candidates if c["name"] not in picked_names]
 
-        # ------------------------------------------------------------------
-        # 4. LLM PROMPT — corrected + safe
-        # ------------------------------------------------------------------
-
+        # -------------------------------------------------------------
+        # 4. LLM PROMPT
+        # -------------------------------------------------------------
         num_needed = sum(required.values())
 
         SYSTEM = f"""
 You are the Meta FPL Selector.
 
-You MUST fill the remaining {num_needed} players to complete a 15-player squad.
+You must fill the remaining {num_needed} players to complete a 15-player squad.
 
-Already selected (LOCKED):
+LOCKED PLAYERS (already selected):
 {json.dumps(picked, ensure_ascii=False)}
 
 Remaining budget: {remaining_budget}
-Remaining slots:
+Remaining positions needed:
 {json.dumps(required)}
 
 Formation rules:
@@ -255,26 +254,24 @@ Formation rules:
 - 3 FWD
 Max 3 players per club.
 
-You will receive the list of remaining candidates.
-Pick ONLY the required counts for each position.
-Never exceed remaining budget.
-Never pick players already locked.
+You will receive the remaining candidates.
+Choose EXACTLY the required slots per position.
 
-RETURN STRICT JSON:
-{{
-    "selected": [... exactly {num_needed} players ...],
-    "bench": [],
-    "justification": {{"overall": "your explanation"}},
-    "constraints_violated": []
-}}
+Return ONLY strict JSON with these keys:
+- selected: list of remaining players
+- bench: []
+- justification: {{"overall": "..."}}
+- constraints_violated: []
 """
 
-        user_prompt = "Remaining candidates:\n" + json.dumps(remaining, ensure_ascii=False)
+        user_prompt = "Remaining candidates:\n" + json.dumps(remaining_candidates, ensure_ascii=False)
 
         try:
-            resp = await call_llm(SYSTEM, user_prompt, model=self.model, temperature=0.0, max_tokens=META_MAX_TOKENS)
-            raw = resp["text"].strip()
+            resp = await call_llm(
+                SYSTEM, user_prompt, model=self.model, temperature=0.0, max_tokens=META_MAX_TOKENS
+            )
 
+            raw = resp["text"].strip()
             if "```" in raw:
                 raw = raw.split("```")[1].strip()
 
@@ -294,7 +291,7 @@ RETURN STRICT JSON:
             return parsed
 
         except Exception as e:
-            logger.error(f"MetaAgent error: {e}")
+            logger.error(f"MetaAgent exception: {e}")
             fb = deterministic_fallback(compact, budget)
             fb["constraints_violated"] = ["exception"]
             return fb
