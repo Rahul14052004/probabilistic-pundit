@@ -1,0 +1,240 @@
+{
+  "selected": [
+    {
+      "name": "Erling Haaland",
+      "team": "Man City",
+      "position": "FWD",
+      "value": 143.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "safe_bet: High minutes, starts, and xP, playing for Man City",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Enzo Fern\u00e1ndez",
+      "team": "Chelsea",
+      "position": "MID",
+      "value": 67.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "safe_bet: High minutes, starts, and xP, playing for Chelsea",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Bruno Borges Fernandes",
+      "team": "Man Utd",
+      "position": "MID",
+      "value": 90.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Antoine Semenyo",
+      "team": "Bournemouth",
+      "position": "MID",
+      "value": 77.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "safe_bet: High minutes, starts, and xP, playing for Bournemouth",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Jean-Philippe Mateta",
+      "team": "Crystal Palace",
+      "position": "FWD",
+      "value": 76.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Jaidon Anthony",
+      "team": "Burnley",
+      "position": "MID",
+      "value": 56.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Bryan Mbeumo",
+      "team": "Man Utd",
+      "position": "MID",
+      "value": 81.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Jurri\u00ebn Timber",
+      "team": "Arsenal",
+      "position": "DEF",
+      "value": 58.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "safe_bet: High minutes, starts, and xP, playing for Arsenal",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Viktor Gy\u00f6keres",
+      "team": "Arsenal",
+      "position": "FWD",
+      "value": 90.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Riccardo Calafiori",
+      "team": "Arsenal",
+      "position": "DEF",
+      "value": 57.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Daniel Mu\u00f1oz Mej\u00eda",
+      "team": "Crystal Palace",
+      "position": "DEF",
+      "value": 56.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Trevoh Chalobah",
+      "team": "Chelsea",
+      "position": "DEF",
+      "value": 52.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Marc Gu\u00e9hi",
+      "team": "Crystal Palace",
+      "position": "DEF",
+      "value": 47.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Nick Pope",
+      "team": "Newcastle",
+      "position": "GK",
+      "value": 50.0,
+      "probs": {
+        "Zeros": 0.25,
+        "Blanks": 0.25,
+        "Tickers": 0.25,
+        "Haulers": 0.25
+      },
+      "expert_justifications": [
+        "value_hunter: Fallback due to error.",
+        "safe_bet: High minutes, starts, and xP, playing for Newcastle",
+        "differentials_specialist: Fallback due to error."
+      ]
+    }
+  ],
+  "bench": [],
+  "justification": {
+    "overall": "Fallback greedy selection based on Tickers + Haulers"
+  },
+  "constraints_violated": [
+    "exception"
+  ]
+}

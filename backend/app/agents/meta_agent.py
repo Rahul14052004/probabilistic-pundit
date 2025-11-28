@@ -7,7 +7,7 @@ from loguru import logger
 from ..llm_client import call_llm
 
 META_DEFAULT_MODEL = os.getenv("META_DEFAULT_MODEL", "llama-3.1-70b-versatile")
-META_MAX_TOKENS = int(os.getenv("META_MAX_TOKENS", "3500"))
+META_MAX_TOKENS = int(os.getenv("META_MAX_TOKENS", "2048"))
 
 
 # ------------------------------------------------------------------------------------
@@ -244,20 +244,48 @@ class MetaAgent:
         SYSTEM = f"""
 You are the Meta FPL Selector.
 
-Locked players:
-{json.dumps(picked, ensure_ascii=False)}
+Inputs:
+- Locked players: {json.dumps(picked, ensure_ascii=False)}
+- Remaining budget: {remaining_budget}
+- Required slots: {json.dumps(required, ensure_ascii=False)}
+- Formation: 2 GK, 5 DEF, 5 MID, 3 FWD
+- Max 3 per club.
+- You must pick EXACTLY {num_needed} players.
 
-Remaining budget: {remaining_budget}
-Required slots:
-{json.dumps(required)}
+Output:
+Return ONLY a valid JSON object with EXACTLY these top-level keys:
+"selected", "bench", "justification", "constraints_violated"
 
-Formation:
-2 GK, 5 DEF, 5 MID, 3 FWD
-Max 3 per club.
+NO text outside JSON. NO markdown. NO extra keys.
 
-Pick exactly {num_needed} players.
-Return STRICT JSON.
+JSON SCHEMA (MANDATORY):
+{{
+  "selected": [
+    {{
+      "name": "Player Name",
+      "team": "Club Name",
+      "position": "GK/DEF/MID/FWD",
+      "value": 55.0
+    }}
+    // exactly {num_needed} players
+  ],
+  "bench": [],
+  "justification": {{ "overall": "short explanation" }},
+  "constraints_violated": []
+}}
+
+Rules:
+- Use only the provided candidate players.
+- Respect remaining budget and required slots.
+- Max 3 per club.
+- Include "value" for every player.
+- If constraints cannot be fully met, still output valid JSON and list issues in "constraints_violated".
 """
+
+
+
+
+
 
         user_prompt = "Remaining candidates:\n" + json.dumps(remaining, ensure_ascii=False)
 

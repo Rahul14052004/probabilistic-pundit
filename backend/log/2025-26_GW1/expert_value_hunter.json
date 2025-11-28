@@ -1,0 +1,306 @@
+{
+  "agent": "value_hunter",
+  "persona": "value_hunter",
+  "recommendations": [
+    {
+      "name": "Erling Haaland",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.1,
+        "Tickers": 0.6,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and threat, but fixture difficulty is high"
+    },
+    {
+      "name": "Richarlison de Andrade",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High threat, but xP is relatively low and fixture difficulty is moderate"
+    },
+    {
+      "name": "Hugo Ekitik\u00e9",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low threat and xP, with a relatively easy fixture"
+    },
+    {
+      "name": "Chris Wood",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a moderate fixture difficulty"
+    },
+    {
+      "name": "Riccardo Calafiori",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a difficult fixture"
+    },
+    {
+      "name": "Cody Gakpo",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a relatively easy fixture"
+    },
+    {
+      "name": "Antoine Semenyo",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a relatively easy fixture"
+    },
+    {
+      "name": "Matt O'Riley",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a moderate fixture difficulty"
+    },
+    {
+      "name": "Mohamed Salah",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.1,
+        "Tickers": 0.6,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and threat, but fixture difficulty is high"
+    },
+    {
+      "name": "Daniel Ballard",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a difficult fixture"
+    },
+    {
+      "name": "Igor Thiago Nascimento Rodrigues",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a moderate fixture difficulty"
+    },
+    {
+      "name": "Jaidon Anthony",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a moderate fixture difficulty"
+    },
+    {
+      "name": "Bryan Mbeumo",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a difficult fixture"
+    },
+    {
+      "name": "Matheus Santos Carneiro da Cunha",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a difficult fixture"
+    },
+    {
+      "name": "Anthony Gordon",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a relatively easy fixture"
+    },
+    {
+      "name": "Lukas Nmecha",
+      "probs": {
+        "Zeros": 0.5,
+        "Blanks": 0.3,
+        "Tickers": 0.2,
+        "Haulers": 0.0
+      },
+      "justification": "Low xP and threat, with a difficult fixture and limited minutes"
+    },
+    {
+      "name": "Anthony Elanga",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a relatively easy fixture"
+    },
+    {
+      "name": "Mohammed Kudus",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a moderate fixture difficulty"
+    },
+    {
+      "name": "Virgil van Dijk",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.1,
+        "Tickers": 0.6,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and threat, but fixture difficulty is high"
+    },
+    {
+      "name": "Rico Lewis",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a difficult fixture"
+    },
+    {
+      "name": "Micky van de Ven",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a moderate fixture difficulty"
+    },
+    {
+      "name": "Matthijs de Ligt",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a difficult fixture"
+    },
+    {
+      "name": "Marc Cucurella Saseta",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.1,
+        "Tickers": 0.6,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and threat, but fixture difficulty is high"
+    },
+    {
+      "name": "Sepp van den Berg",
+      "probs": {
+        "Zeros": 0.2,
+        "Blanks": 0.4,
+        "Tickers": 0.3,
+        "Haulers": 0.1
+      },
+      "justification": "Low xP and threat, with a moderate fixture difficulty"
+    },
+    {
+      "name": "Gabriel Gudmundsson",
+      "probs": {
+        "Zeros": 0.5,
+        "Blanks": 0.3,
+        "Tickers": 0.2,
+        "Haulers": 0.0
+      },
+      "justification": "Low xP and threat, with a difficult fixture and limited minutes"
+    },
+    {
+      "name": "Djed Spence",
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.3,
+        "Tickers": 0.5,
+        "Haulers": 0.1
+      },
+      "justification": "High xP, but low threat and a moderate fixture difficulty"
+    },
+    {
+      "name": "Alisson Becker",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.1,
+        "Tickers": 0.6,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and threat, but fixture difficulty is high"
+    },
+    {
+      "name": "David Raya Mart\u00edn",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.1,
+        "Tickers": 0.6,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and threat, but fixture difficulty is high"
+    },
+    {
+      "name": "Jordan Pickford",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.1,
+        "Tickers": 0.6,
+        "Haulers": 0.3
+      },
+      "justification": "High xP and threat, but fixture difficulty is high"
+    },
+    {
+      "name": "Ederson Santana de Moraes",
+      "probs": {
+        "Zeros": 0.5,
+        "Blanks": 0.3,
+        "Tickers": 0.2,
+        "Haulers": 0.0
+      },
+      "justification": "Low xP and threat, with a difficult fixture and limited minutes"
+    }
+  ]
+}

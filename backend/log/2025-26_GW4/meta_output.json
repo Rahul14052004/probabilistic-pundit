@@ -1,0 +1,257 @@
+{
+  "selected": [
+    {
+      "name": "Erling Haaland",
+      "team": "Man City",
+      "position": "FWD",
+      "value": 141.0,
+      "probs": {
+        "Zeros": 0.125,
+        "Blanks": 0.175,
+        "Tickers": 0.325,
+        "Haulers": 0.375
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, consistent minutes, and favorable fixture",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Jo\u00e3o Pedro Junqueira de Jesus",
+      "team": "Chelsea",
+      "position": "FWD",
+      "value": 76.0,
+      "probs": {
+        "Zeros": 0.175,
+        "Blanks": 0.225,
+        "Tickers": 0.325,
+        "Haulers": 0.275
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, consistent minutes, and favorable fixture",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Jurri\u00ebn Timber",
+      "team": "Arsenal",
+      "position": "DEF",
+      "value": 56.0,
+      "probs": {
+        "Zeros": 0.175,
+        "Blanks": 0.225,
+        "Tickers": 0.325,
+        "Haulers": 0.275
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, consistent minutes, and favorable fixture",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Riccardo Calafiori",
+      "team": "Arsenal",
+      "position": "DEF",
+      "value": 56.0,
+      "probs": {
+        "Zeros": 0.19999999999999998,
+        "Blanks": 0.2333333333333333,
+        "Tickers": 0.3,
+        "Haulers": 0.26666666666666666
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, consistent minutes, and favorable fixture",
+        "safe_bet: High xP (8.87), consistent minutes (224), and threat (22.67)",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Hugo Ekitik\u00e9",
+      "team": "Liverpool",
+      "position": "FWD",
+      "value": 87.0,
+      "probs": {
+        "Zeros": 0.19999999999999998,
+        "Blanks": 0.2333333333333333,
+        "Tickers": 0.3,
+        "Haulers": 0.26666666666666666
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, consistent minutes, and favorable fixture",
+        "safe_bet: High xP (7.33), consistent minutes (228), and threat (20.67)",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Trevoh Chalobah",
+      "team": "Chelsea",
+      "position": "DEF",
+      "value": 50.0,
+      "probs": {
+        "Zeros": 0.2333333333333333,
+        "Blanks": 0.26666666666666666,
+        "Tickers": 0.26666666666666666,
+        "Haulers": 0.2333333333333333
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but high fixture difficulty and limited minutes",
+        "safe_bet: High xP (6.7), consistent minutes (248), and threat (18)",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Marc Cucurella Saseta",
+      "team": "Chelsea",
+      "position": "DEF",
+      "value": 61.0,
+      "probs": {
+        "Zeros": 0.2333333333333333,
+        "Blanks": 0.26666666666666666,
+        "Tickers": 0.26666666666666666,
+        "Haulers": 0.2333333333333333
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but high fixture difficulty and limited minutes",
+        "safe_bet: High xP (6.1), consistent minutes (248), and threat (5.67)",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Nick Pope",
+      "team": "Newcastle",
+      "position": "GK",
+      "value": 50.0,
+      "probs": {
+        "Zeros": 0.2333333333333333,
+        "Blanks": 0.26666666666666666,
+        "Tickers": 0.26666666666666666,
+        "Haulers": 0.2333333333333333
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but high fixture difficulty and limited minutes",
+        "safe_bet: High xP (5.53), consistent minutes (270), and threat (0)",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Antoine Semenyo",
+      "team": "Bournemouth",
+      "position": "MID",
+      "value": 73.0,
+      "probs": {
+        "Zeros": 0.225,
+        "Blanks": 0.275,
+        "Tickers": 0.275,
+        "Haulers": 0.225
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but high fixture difficulty and limited minutes",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Jaidon Anthony",
+      "team": "Burnley",
+      "position": "MID",
+      "value": 55.0,
+      "probs": {
+        "Zeros": 0.225,
+        "Blanks": 0.275,
+        "Tickers": 0.275,
+        "Haulers": 0.225
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but high fixture difficulty and limited minutes",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Enzo Fern\u00e1ndez",
+      "team": "Chelsea",
+      "position": "MID",
+      "value": 65.0,
+      "probs": {
+        "Zeros": 0.225,
+        "Blanks": 0.275,
+        "Tickers": 0.275,
+        "Haulers": 0.225
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but high fixture difficulty and limited minutes",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Dango Ouattara",
+      "team": "Brentford",
+      "position": "MID",
+      "value": 60.0,
+      "probs": {
+        "Zeros": 0.225,
+        "Blanks": 0.275,
+        "Tickers": 0.275,
+        "Haulers": 0.225
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but limited minutes and high fixture difficulty",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Isma\u00efla Sarr",
+      "team": "Crystal Palace",
+      "position": "MID",
+      "value": 65.0,
+      "probs": {
+        "Zeros": 0.225,
+        "Blanks": 0.275,
+        "Tickers": 0.275,
+        "Haulers": 0.225
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but high fixture difficulty and limited minutes",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Rico Lewis",
+      "team": "Man City",
+      "position": "DEF",
+      "value": 50.0,
+      "probs": {
+        "Zeros": 0.225,
+        "Blanks": 0.275,
+        "Tickers": 0.275,
+        "Haulers": 0.225
+      },
+      "expert_justifications": [
+        "value_hunter: Decent xP and threat, but high fixture difficulty and limited minutes",
+        "differentials_specialist: Fallback due to error."
+      ]
+    },
+    {
+      "name": "Guglielmo Vicario",
+      "team": "Spurs",
+      "position": "GK",
+      "value": 50.0,
+      "probs": {
+        "Zeros": 0.26666666666666666,
+        "Blanks": 0.3,
+        "Tickers": 0.2333333333333333,
+        "Haulers": 0.19999999999999998
+      },
+      "expert_justifications": [
+        "value_hunter: Low xP and threat, high fixture difficulty, and limited minutes",
+        "safe_bet: High xP (6.37), consistent minutes (270), and threat (0)",
+        "differentials_specialist: Fallback due to error."
+      ]
+    }
+  ],
+  "bench": [],
+  "justification": {
+    "overall": "Fallback greedy selection based on Tickers + Haulers"
+  },
+  "constraints_violated": [
+    "exception"
+  ]
+}

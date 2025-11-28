@@ -1,0 +1,211 @@
+{
+  "selected": [
+    {
+      "name": "Mohamed Salah",
+      "team": "Liverpool",
+      "position": "MID",
+      "value": 145.0,
+      "probs": {
+        "Zeros": 0.03333333333333333,
+        "Blanks": 0.10000000000000002,
+        "Tickers": 0.3333333333333333,
+        "Haulers": 0.5333333333333333
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, but fixture difficulty is high",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Liverpool in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "Virgil van Dijk",
+      "team": "Liverpool",
+      "position": "DEF",
+      "value": 60.0,
+      "probs": {
+        "Zeros": 0.03333333333333333,
+        "Blanks": 0.10000000000000002,
+        "Tickers": 0.3333333333333333,
+        "Haulers": 0.5333333333333333
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, but fixture difficulty is high",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Liverpool in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "Marc Cucurella Saseta",
+      "team": "Chelsea",
+      "position": "DEF",
+      "value": 60.0,
+      "probs": {
+        "Zeros": 0.03333333333333333,
+        "Blanks": 0.10000000000000002,
+        "Tickers": 0.3333333333333333,
+        "Haulers": 0.5333333333333333
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, but fixture difficulty is high",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Chelsea in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "Alisson Becker",
+      "team": "Liverpool",
+      "position": "GK",
+      "value": 55.0,
+      "probs": {
+        "Zeros": 0.03333333333333333,
+        "Blanks": 0.10000000000000002,
+        "Tickers": 0.3333333333333333,
+        "Haulers": 0.5333333333333333
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, but fixture difficulty is high",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Liverpool in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "David Raya Mart\u00edn",
+      "team": "Arsenal",
+      "position": "GK",
+      "value": 55.0,
+      "probs": {
+        "Zeros": 0.03333333333333333,
+        "Blanks": 0.10000000000000002,
+        "Tickers": 0.3333333333333333,
+        "Haulers": 0.5333333333333333
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, but fixture difficulty is high",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Arsenal in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "Cody Gakpo",
+      "team": "Liverpool",
+      "position": "MID",
+      "value": 75.0,
+      "probs": {
+        "Zeros": 0.05,
+        "Blanks": 0.15,
+        "Tickers": 0.25,
+        "Haulers": 0.55
+      },
+      "expert_justifications": [
+        "value_hunter: High xP, but low threat and a relatively easy fixture",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Liverpool in a favorable fixture."
+      ]
+    },
+    {
+      "name": "Bryan Mbeumo",
+      "team": "Man Utd",
+      "position": "MID",
+      "value": 80.0,
+      "probs": {
+        "Zeros": 0.06666666666666668,
+        "Blanks": 0.16666666666666669,
+        "Tickers": 0.30000000000000004,
+        "Haulers": 0.4666666666666667
+      },
+      "expert_justifications": [
+        "value_hunter: High xP, but low threat and a difficult fixture",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Man Utd in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "Matheus Santos Carneiro da Cunha",
+      "team": "Man Utd",
+      "position": "MID",
+      "value": 80.0,
+      "probs": {
+        "Zeros": 0.06666666666666668,
+        "Blanks": 0.16666666666666669,
+        "Tickers": 0.30000000000000004,
+        "Haulers": 0.4666666666666667
+      },
+      "expert_justifications": [
+        "value_hunter: High xP, but low threat and a difficult fixture",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Man Utd in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "Anthony Gordon",
+      "team": "Newcastle",
+      "position": "MID",
+      "value": 75.0,
+      "probs": {
+        "Zeros": 0.06666666666666668,
+        "Blanks": 0.16666666666666669,
+        "Tickers": 0.30000000000000004,
+        "Haulers": 0.4666666666666667
+      },
+      "expert_justifications": [
+        "value_hunter: High xP, but low threat and a relatively easy fixture",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Newcastle in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "Erling Haaland",
+      "team": "Man City",
+      "position": "FWD",
+      "value": 140.0,
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.1,
+        "Tickers": 0.6,
+        "Haulers": 0.3
+      },
+      "expert_justifications": [
+        "value_hunter: High xP and threat, but fixture difficulty is high"
+      ]
+    },
+    {
+      "name": "Rico Lewis",
+      "team": "Man City",
+      "position": "DEF",
+      "value": 50.0,
+      "probs": {
+        "Zeros": 0.10000000000000002,
+        "Blanks": 0.20000000000000004,
+        "Tickers": 0.2333333333333333,
+        "Haulers": 0.4666666666666666
+      },
+      "expert_justifications": [
+        "value_hunter: Low xP and threat, with a difficult fixture",
+        "safe_bet: High minutes, starts, ICT index, influence, xP, and threat, playing for Man City in a favorable fixture.",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    },
+    {
+      "name": "Richarlison de Andrade",
+      "team": "Spurs",
+      "position": "FWD",
+      "value": 65.0,
+      "probs": {
+        "Zeros": 0.1,
+        "Blanks": 0.25,
+        "Tickers": 0.45,
+        "Haulers": 0.2
+      },
+      "expert_justifications": [
+        "value_hunter: High threat, but xP is relatively low and fixture difficulty is moderate",
+        "differentials_specialist: High threat and selected by percentage, but fixture is relatively easy"
+      ]
+    }
+  ],
+  "bench": [],
+  "justification": {
+    "overall": "Fallback greedy selection based on Tickers + Haulers"
+  },
+  "constraints_violated": [
+    "exception"
+  ]
+}

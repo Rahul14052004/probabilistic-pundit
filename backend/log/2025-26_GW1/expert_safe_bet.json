@@ -1,0 +1,126 @@
+{
+  "agent": "safe_bet",
+  "persona": "safe_bet",
+  "recommendations": [
+    {
+      "name": "Mohamed Salah",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Liverpool in a favorable fixture."
+    },
+    {
+      "name": "Cody Gakpo",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Liverpool in a favorable fixture."
+    },
+    {
+      "name": "Anthony Gordon",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Newcastle in a favorable fixture."
+    },
+    {
+      "name": "Bryan Mbeumo",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Man Utd in a favorable fixture."
+    },
+    {
+      "name": "Matheus Santos Carneiro da Cunha",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Man Utd in a favorable fixture."
+    },
+    {
+      "name": "Virgil van Dijk",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Liverpool in a favorable fixture."
+    },
+    {
+      "name": "Rico Lewis",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Man City in a favorable fixture."
+    },
+    {
+      "name": "Marc Cucurella Saseta",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Chelsea in a favorable fixture."
+    },
+    {
+      "name": "Alisson Becker",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Liverpool in a favorable fixture."
+    },
+    {
+      "name": "David Raya Mart\u00edn",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Arsenal in a favorable fixture."
+    },
+    {
+      "name": "Jordan Pickford",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Everton in a favorable fixture."
+    },
+    {
+      "name": "Ederson Santana de Moraes",
+      "probs": {
+        "Zeros": 0.0,
+        "Blanks": 0.0,
+        "Tickers": 0.0,
+        "Haulers": 1.0
+      },
+      "justification": "High minutes, starts, ICT index, influence, xP, and threat, playing for Man City in a favorable fixture."
+    }
+  ]
+}
