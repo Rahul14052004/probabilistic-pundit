@@ -26,3 +26,7 @@ async def compare_players(payload: dict):
 @router.post('/explain_team')
 async def explain_team(payload: dict):
     return {'explanation': 'Not implemented yet'}
+
+from fastapi import FastAPI
+app = FastAPI()
+app.include_router(router)
