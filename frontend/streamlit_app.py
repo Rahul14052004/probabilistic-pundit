@@ -9,7 +9,7 @@ if not hasattr(sys, "_backend_started"):
     
     def start_backend():
         subprocess.Popen([
-            "uvicorn", "backend.app.api:app",
+            "uvicorn", "backend.app.main:app",
             "--host", "127.0.0.1",
             "--port", "8000"
         ])
